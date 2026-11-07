@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """dark-landing の規約違反を検出する。使い方: lint.py <src ディレクトリ>
 
-検出: 直書き色 / 影 / 太字 700 以上 / グラデーション装飾 / 仮ロゴ画像 / 数値の直書き件数。
+検出: 直書き色 / 影 / 太字 700 以上 / グラデーション装飾 / 仮ロゴ画像。
 終了コード: 違反があれば 1。
 """
 import re
@@ -16,7 +16,6 @@ RULES = [
     (r"\bfont-(?:bold|extrabold|black|semibold)\b", "太さは 400 / 500 のみ"),
     (r"\bfrom-\w+.*\bto-\w+|\bblur-(?:2xl|3xl)\b", "装飾グラデ・グローは使わない（フェード用の背景色→transparent は可）"),
     (r"(?:placeholder|lorem|via\.placeholder|picsum)", "仮の画像・文言"),
-    (r"\d+\s+blocks?\b(?!\})", "件数の直書き。配列長から計算する"),
 ]
 EXT = {".tsx", ".ts", ".jsx", ".js", ".css"}
 SKIP = {"node_modules", ".next", "dist", "build"}

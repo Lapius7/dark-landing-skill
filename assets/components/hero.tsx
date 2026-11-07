@@ -12,7 +12,7 @@ export function Hero() {
           href={a.href}
           className="inline-flex h-6 items-stretch overflow-hidden rounded-md border text-xs"
         >
-          <span className="flex items-center border-r px-2">{a.text}</span>
+          <span className="flex items-center border-r px-2">{a.badge}</span>
           <span className="flex items-center gap-1 px-2 text-muted-foreground transition-colors hover:text-foreground">
             {a.linkLabel}
             <ArrowUpRight className="size-3" />

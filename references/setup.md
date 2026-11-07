@@ -3,16 +3,16 @@
 ## 依存
 
 ```bash
-bun create next-app@latest <name>   # 既存プロジェクトがあればそれを使う
-cd <name>
-pnpm dlx shadcn@latest init
-pnpm dlx shadcn@latest add button accordion avatar badge separator
-pnpm add next-themes lucide-react
+# 既存プロジェクトがあればそれを使う。無ければ Next.js を作る
+npx create-next-app@latest <name> && cd <name>
+npx shadcn@latest init
+npx shadcn@latest add button accordion
+npm i next-themes lucide-react
 ```
 
-- パッケージ管理は pnpm、ランタイムは Bun を優先（既存が Node 前提ならそれに従う）。
+- コマンドは npm 表記。pnpm / bun / yarn を使っているなら読み替える。
 - Tailwind は v4。shadcn の `components.json` がある前提。
-- フォント: `pnpm add geist`。日本語が要るなら `Noto Sans JP` を `next/font/google` で足す。
+- フォント: `npm i geist`。CJK を表示するなら該当フォント（例: `Noto Sans JP`）を `next/font/google` で足す。
 
 ## 導入手順
 
@@ -25,12 +25,9 @@ pnpm add next-themes lucide-react
 <main className="mx-auto max-w-screen-xl border-x">
   <Header /><Hero /><BentoGrid /><LogoCloud />
   <FeatureGrid /><WallOfLove /><Faq /><Cta /><Footer />
+  {/* 不要なセクションは外してよい */}
 </main>
 ```
 
 5. `layout.tsx` に `ThemeProvider`（`attribute="class"`、`defaultTheme="dark"`）を入れる。
-6. ファビコンを設定する。OGP が未指定なら skill `ogp-image` を使う。
-
-## ローカル確認
-
-サーバーは portless で `<名前>.localhost` にする（`use-portless` のメモに従う）。
+6. ファビコンと OGP 画像を設定する。

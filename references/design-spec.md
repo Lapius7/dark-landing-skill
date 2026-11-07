@@ -1,6 +1,6 @@
 # デザイン仕様
 
-元になった見た目の実測ではなく、スクリーンショットから起こした値。細部は `pixel-align` で詰める。
+スクリーンショットから起こした目安の値。細部は実画面で測って詰める。
 
 ## 色（ダーク既定）
 
@@ -20,12 +20,12 @@
 ## 文字
 
 - 欧文: Geist Sans（なければ Inter）。等幅: Geist Mono。
-- 日本語を含むときは `font-family` に `"Noto Sans JP", "Hiragino Sans", "Yu Gothic UI", sans-serif` を明示（OS差のずれ対策）。
+- CJK を含むときは、対応フォントを `font-family` に明示する（OSごとの字の位置差によるずれ対策）。例: 日本語なら `"Noto Sans JP", "Hiragino Sans", "Yu Gothic UI"`。
 - 見出し H1: `clamp(2rem, 5vw, 3.25rem)`、`font-weight 500`、`letter-spacing -0.02em`、`line-height 1.15`。
 - 見出し H2（セクション）: `1.5rem`〜`2rem`、weight 500。
 - セル見出し: `0.875rem`（14px）、weight 500。
 - 説明文: `0.875rem`〜`1rem`、`--muted-foreground`、`line-height 1.6`。
-- ラベル・件数（「14 blocks」）: `0.75rem`（12px）、`--muted-foreground`。
+- ラベル・補足（件数など）: `0.75rem`（12px）、`--muted-foreground`。
 - 太さは 400 と 500 のみ。700 は使わない。
 - 数字が並ぶ箇所は `tabular-nums`。
 
@@ -64,4 +64,4 @@
 
 - 変化は `150ms`〜`200ms`、`ease-out`。入場は `opacity` と `translateY(8px)` のみ。
 - `@media (prefers-reduced-motion: reduce)` で全停止。
-- テーマ切替は `next-themes`。切替ボタン（`Toggle Theme` + `D` キー表示）をフッターに置く。
+- テーマ切替は `next-themes`。切替ボタンをフッターに置く（任意）。

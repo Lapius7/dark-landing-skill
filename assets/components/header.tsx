@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { nav, site } from "@/content";
+import { nav, site, labels } from "@/content";
 
 export function Header() {
   return (
@@ -18,8 +18,8 @@ export function Header() {
             </li>
           ))}
         </ul>
-        <Button variant="ghost" size="sm" className="h-8 text-xs">Log in</Button>
-        <Button size="sm" className="h-8 text-xs">Get access</Button>
+        <Button variant="ghost" size="sm" className="h-8 text-xs">{labels.login}</Button>
+        <Button size="sm" className="h-8 text-xs">{labels.signup}</Button>
       </nav>
     </header>
   );

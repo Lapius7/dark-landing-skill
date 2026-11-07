@@ -1,13 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 import { ChevronDown } from "lucide-react";
-import { testimonials } from "@/content";
+import { testimonials, labels } from "@/content";
 
 /** testimonials が空なら出さない。実在し、掲載許可のある声だけ使う。 */
 export function WallOfLove() {
   if (testimonials.length === 0) return null;
   return (
     <section className="border-b">
-      <h2 className="px-6 py-6 text-sm font-medium">Wall of love</h2>
+      <h2 className="px-6 py-6 text-sm font-medium">{labels.wallTitle}</h2>
       <div className="relative max-h-[520px] overflow-hidden overscroll-contain">
         <ul className="grid grid-cols-1 border-t sm:grid-cols-2 lg:grid-cols-4">
           {testimonials.map((t) => (
@@ -27,7 +27,7 @@ export function WallOfLove() {
       </div>
       <div className="flex justify-center border-t py-3">
         <button className="inline-flex items-center gap-1 text-xs text-muted-foreground transition-colors hover:text-foreground">
-          See more <ChevronDown className="size-3" />
+          {labels.seeMore} <ChevronDown className="size-3" />
         </button>
       </div>
     </section>

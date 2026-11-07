@@ -5,8 +5,8 @@
 ## 導入
 
 ```bash
-git clone <this repo> ~/projects/workspace/git/github-repositories/dark-landing-skill
-ln -s ~/projects/workspace/git/github-repositories/dark-landing-skill ~/.claude/skills/dark-landing
+git clone <this repo> dark-landing-skill
+ln -s "$PWD/dark-landing-skill" ~/.claude/skills/dark-landing
 ```
 
 ## 使い方

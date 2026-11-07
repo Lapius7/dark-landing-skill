@@ -8,7 +8,7 @@ const align = {
 /** 罫線は「右と下」だけをセルが持ち、最終列・最終行で消す。二重線を作らない。 */
 export function BentoGrid() {
   return (
-    <section id="blocks" className="border-b">
+    <section id="grid" className="border-b">
       <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
         {categories.map((c) => (
           <li
@@ -17,7 +17,7 @@ export function BentoGrid() {
           >
             <div className={`flex flex-col gap-0.5 ${align[c.align]}`}>
               <h3 className="text-sm font-medium">{c.name}</h3>
-              <p className="text-xs text-muted-foreground tabular-nums">{c.count} blocks</p>
+              <p className="text-xs text-muted-foreground tabular-nums">{c.meta}</p>
             </div>
             {/* 抽象モック: 灰の棒と箱だけ。セル端で切り、下へフェードさせる */}
             <div aria-hidden className="fade-bottom absolute inset-x-6 bottom-0 top-20 space-y-2 opacity-50">
